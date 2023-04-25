@@ -13,7 +13,7 @@ export default function Home() {
   }, []);
 
   const loadPatients = async () => {
-    const result = await axios.get("../../patients");
+    const result = await axios.get("../../api/patients");
     const sortedPatients = sortPatients(result.data);
     setPatients(sortedPatients);
   };
