@@ -19,7 +19,7 @@ export default function ViewPatient() {
   }, []);
 
   const loadPatient = async () => {
-    const result = await axios.get(`http://hospitalorganizer-env.eba-dxqin9k5.us-east-1.elasticbeanstalk.com/patients/${id}`);
+    const result = await axios.get(`../../api/patients/${id}`);
     setPatient(result.data);
   };
 

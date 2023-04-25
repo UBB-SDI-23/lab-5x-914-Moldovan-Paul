@@ -27,12 +27,12 @@ export default function EditPatient() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    await axios.put(`http://hospitalorganizer-env.eba-dxqin9k5.us-east-1.elasticbeanstalk.com/patients/${id}`, patient);
+    await axios.put(`../../api/patients/${id}`, patient);
     navigate("/");
   };
 
   const loadPatient = async () => {
-    const result = await axios.get(`http://hospitalorganizer-env.eba-dxqin9k5.us-east-1.elasticbeanstalk.com/patients/${id}`);
+    const result = await axios.get(`../../api/patients/${id}`);
     setPatient(result.data);
   };
 

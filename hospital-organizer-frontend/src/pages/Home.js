@@ -13,18 +13,18 @@ export default function Home() {
   }, []);
 
   const loadPatients = async () => {
-    const result = await axios.get("http://hospitalorganizer-env.eba-dxqin9k5.us-east-1.elasticbeanstalk.com/patients");
+    const result = await axios.get("../../api/patients");
     const sortedPatients = sortPatients(result.data);
     setPatients(sortedPatients);
   };
 
   const loadHospitals = async () => {
-    const result = await axios.get("http://hospitalorganizer-env.eba-dxqin9k5.us-east-1.elasticbeanstalk.com/hospitals");
+    const result = await axios.get("../../api/hospitals");
     setHospitals(result.data);
   };
 
   const deletePatient = async (id) => {
-    await axios.delete(`http://hospitalorganizer-env.eba-dxqin9k5.us-east-1.elasticbeanstalk.com/patients/${id}`);
+    await axios.delete(`../../api/patients/${id}`);
     loadPatients();
   };
 

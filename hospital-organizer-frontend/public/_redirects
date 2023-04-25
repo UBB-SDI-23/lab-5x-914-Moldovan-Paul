@@ -1,1 +1,2 @@
+/api/* http://hospitalorganizer-env.eba-dxqin9k5.us-east-1.elasticbeanstalk.com/api/:splat 200!
 /*    /index.html   200
