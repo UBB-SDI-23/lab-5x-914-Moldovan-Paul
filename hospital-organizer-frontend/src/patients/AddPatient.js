@@ -21,7 +21,7 @@ export default function AddPatient() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    await axios.post("../../api/patients", patient);
+    await axios.post("../../patients", patient);
     navigate("/");
   };
 
