@@ -34,8 +34,6 @@ export default function Home() {
       return patients;
     }
 
-    console.log(sortRow);
-
     return patients.sort((a, b) => {
       if (a[sortRow] < b[sortRow]) {
         return -1;
