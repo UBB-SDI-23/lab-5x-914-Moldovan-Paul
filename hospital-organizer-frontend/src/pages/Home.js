@@ -34,6 +34,8 @@ export default function Home() {
       return patients;
     }
 
+    console.log(sortRow);
+
     return patients.sort((a, b) => {
       if (a[sortRow] < b[sortRow]) {
         return -1;
@@ -161,8 +163,8 @@ export default function Home() {
             <td>{hospital.name}</td>
             <td>{hospital.address}</td>
             <td>{hospital.specialties}</td>
-            <td>{hospital.privateHospital}</td>
-            <td>{hospital.takesEmergencies}</td>
+            <td>{String(hospital.privateHospital)}</td>
+            <td>{String(hospital.takesEmergencies)}</td>
             <td>{hospital.maximumCapacity}</td>
           </tr>
         ))}
