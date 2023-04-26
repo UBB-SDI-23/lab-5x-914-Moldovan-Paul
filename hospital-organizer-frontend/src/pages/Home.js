@@ -50,6 +50,17 @@ export default function Home() {
     setPatients(sortedPatients);
   };
 
+  const handleFilterChange = (event) => {
+    setFilterValue(event.target.value);
+  };
+
+  const handleFilterClick = () => {
+    const filteredHospitals = hospitals.filter(
+      (hospital) => hospital.maximumCapacity > parseInt(filterValue)
+    );
+    setHospitals(filteredHospitals);
+  };
+
   return (
   <>
     <div className="container">
@@ -118,6 +129,18 @@ export default function Home() {
 
   <div className="container">
       <div className="py-4">
+        <div className="d-flex my-3">
+          <input
+            type="text"
+            className="form-control me-2"
+            placeholder="Filter by maximum capacity"
+            value={filterValue}
+            onChange={handleFilterChange}
+          />
+          <button className="btn btn-primary me-2" onClick={handleFilterClick}>
+            Filter
+          </button>
+        </div>
         <table className="table border shadow">
           <thead>
             <tr>
