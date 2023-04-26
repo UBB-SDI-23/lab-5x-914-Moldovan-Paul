@@ -29,7 +29,7 @@ export default function Home() {
     loadPatients();
   };
 
-  const sortPatients = (patients) => {
+  const sortPatients = (patients, sortRow) => {
     if (!sortRow) {
       return patients;
     }
@@ -49,7 +49,7 @@ export default function Home() {
 
   const handleSortChange = (event) => {
     setSortRow(event.target.value);
-    const sortedPatients = sortPatients(patients);
+    const sortedPatients = sortPatients(patients, event.target.value);
     setPatients(sortedPatients);
   };
 
