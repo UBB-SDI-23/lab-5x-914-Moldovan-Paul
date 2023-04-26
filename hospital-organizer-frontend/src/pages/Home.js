@@ -114,11 +114,15 @@ export default function Home() {
                 Edit
               </Link>
               <button
-                className="btn btn-danger mx-2"
-                onClick={() => deletePatient(patient.id)}
-              >
-                Delete
-              </button>
+              className="btn btn-danger mx-2"
+              onClick={() => {
+                if (window.confirm("Are you sure you want to delete this patient?")) {
+                  deletePatient(patient.id);
+                }
+              }}
+            >
+              Delete
+            </button>
             </td>
           </tr>
         ))}
