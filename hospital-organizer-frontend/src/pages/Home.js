@@ -34,6 +34,7 @@ export default function Home() {
       return patients;
     }
 
+
     return patients.sort((a, b) => {
       if (a[sortRow] < b[sortRow]) {
         return -1;
@@ -55,11 +56,9 @@ export default function Home() {
     setFilterValue(event.target.value);
   };
 
-  const handleFilterClick = () => {
-    const filteredHospitals = hospitals.filter(
-      (hospital) => hospital.maximumCapacity > parseInt(filterValue)
-    );
-    setHospitals(filteredHospitals);
+  const handleFilterClick = async () => {
+    const filteredHospitals = await axios.get("../../api/hospitals/filter/" + parseInt(filterValue))
+    setHospitals(filteredHospitals.data);
   };
 
   return (
