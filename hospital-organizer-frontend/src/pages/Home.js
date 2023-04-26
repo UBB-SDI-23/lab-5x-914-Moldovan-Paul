@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 export default function Home() {
   const [patients, setPatients] = useState([]);
   const [hospitals, setHospitals] = useState([]);
+  const [filterValue, setFilterValue] = useState("");
   const [sortRow, setSortRow] = useState("");
 
   useEffect(() => {
