@@ -163,8 +163,8 @@ export default function Home() {
             <td>{hospital.name}</td>
             <td>{hospital.address}</td>
             <td>{hospital.specialties}</td>
-            <td>{String(hospital.privateHospital)}</td>
-            <td>{String(hospital.takesEmergencies)}</td>
+            <td>{String(hospital.privateHospital) ? 'True' : 'False'}</td>
+            <td>{String(hospital.takesEmergencies) ? 'True' : 'False'}</td>
             <td>{hospital.maximumCapacity}</td>
           </tr>
         ))}
